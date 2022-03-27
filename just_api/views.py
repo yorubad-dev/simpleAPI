@@ -5,9 +5,12 @@ from rest_framework import generics
 from rest_framework import mixins
 
 # Create your views here.
-class GenericApiView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin,):
+class GenericApiView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin,mixins.UpdateModelMixin):
     def get(self, request):
         return self.list(request)
 
     def post(self, request):
         return self.create(request)
+
+    def put(self, request):
+        return self.update(request)    
