@@ -3,7 +3,8 @@ from .models import Article
 from .serializer import ArticleSerializer
 from rest_framework import generics
 from rest_framework import mixins
-
+from rest_framework.authentication import BasicAuthentication, SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 
