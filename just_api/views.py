@@ -10,7 +10,7 @@ from rest_framework import mixins
 class GenericApiView(generics.GenericAPIView, mixins.ListModelMixin,
                      mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin):
     serializer_class = ArticleSerializer
-    queryset = Article
+    queryset = Article.objects.all()
 
     def get(self, request):
         return self.list(request)
