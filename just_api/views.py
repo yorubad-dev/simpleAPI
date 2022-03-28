@@ -14,6 +14,8 @@ class GenericApiView(generics.GenericAPIView, mixins.ListModelMixin,
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
     lookup_field = 'id'
+    authentication_classes = [BasicAuthentication, SessionAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
     def get(self, request, id=None):
